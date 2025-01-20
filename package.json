@@ -57,7 +57,7 @@
     "tsup": "^8.3.0", // TODO for Node.js projects which requires bundling
     "typescript": "^5.6.2",
     "vite": "^6.0.2", // TODO for frontend projects
-    "vitest": "^2.1.1",
+    "vitest": "^3.0.2",
     "wrangler": "^3.78.2"
   },
   "engines": {
