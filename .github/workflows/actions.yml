@@ -23,32 +23,34 @@ jobs:
           - 22
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - name: Use Node.js v${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          # cache: npm # TODO Add this line if the projects has lock files (e.g. web apps)
+          # cache: pnpm # TODO Add this line if the projects has lock files (e.g. web apps)
 
       # TODO Choose one of these
-      # - run: npm ci # If the project DOES have lock files in the repo (e.g. web apps)
-      # - run: npm install # If the project does NOT have lock files in the repo (e.g. npm packages)
-      - run: npm run build
-      - run: npm test
+      # - run: pnpm install --frozen-lockfile # If the project DOES have lock files (e.g. web apps)
+      # - run: pnpm install # If the project does NOT have lock files (e.g. npm packages)
+      - run: pnpm run build
+      - run: pnpm run test
 
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - name: Use Node.js v22
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          # cache: npm # TODO Add this line if the projects has lock files (e.g. web apps)
+          # cache: pnpm # TODO Add this line if the projects has lock files (e.g. web apps)
 
       # TODO Choose one of these
-      # - run: npm ci # If the project DOES have lock files in the repo (e.g. web apps)
-      # - run: npm install # If the project does NOT have lock files in the repo (e.g. npm packages)
-      - run: npm run lint
+      # - run: pnpm install --frozen-lockfile # If the project DOES have lock files (e.g. web apps)
+      # - run: pnpm install # If the project does NOT have lock files (e.g. npm packages)
+      - run: pnpm run lint
 
   # ▼▼ TODO Add this section if the project is a web app ▼▼
   deploy:
@@ -59,13 +61,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - run: npm ci
-      - run: npm run build
-      - run: npm run deploy
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+      - run: pnpm run deploy
   # ▲▲ TODO Add this section if the project is a web app ▲▲
 
   # ▼▼ TODO Add this section if the project is an npm package ▼▼
@@ -77,14 +80,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - run: npm install # If the project does NOT have lock files in the repo (e.g. npm packages)
-      - run: npm run build
+      - run: pnpm install
+      - run: pnpm run build
 
       - name: Set npm auth token
         run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > ~/.npmrc
-      - run: npm run release
+      - run: pnpm run release
   # ▲▲ TODO Add this section if the project is an npm package ▲▲
