@@ -59,7 +59,7 @@ pnpm-debug.log*
 # ▼▼ TODO Add this section if the project does NOT require the lock files e.g. npm packages ▼▼
 
 # Lockfiles are not required for npm packages
-package-lock.json
+pnpm-lock.yaml
 
 # ▲▲ TODO Add this section if the project does NOT require the lock files e.g. npm packages ▲▲
 
@@ -69,8 +69,8 @@ package-lock.json
 
 # ▲▲ TODO Add this section if the project DOES require the lock files e.g. web apps ▲▲
 
+package-lock.json
 yarn.lock
-pnpm-lock.yaml
 bun.lockb
 npm-shrinkwrap.json
 
