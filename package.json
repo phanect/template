@@ -35,7 +35,7 @@
     "dev": "esno main.ts",
 
     "build": "vite build",
-    "lint": "eslint --ext=.js,.jsx,.ts,.tsx,.vue,.json .",
+    "lint": "tsc --noEmit && eslint",
 
     // TODO Add this if the project is an npm package
     "release": "npm publish --access public --non-interactive",
