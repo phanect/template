@@ -48,7 +48,7 @@
   "dependencies": {},
   // TODO The package version is probably outdated, so check with `npm outdated` and update them.
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240909.0",
+    "@cloudflare/workers-types": "^4.20240909.0", // TODO for Cloudflare-based projects
     "@phanect/configs": "latest",
     "@phanect/lint": "latest",
     "@phanect/lint-vue": "latest",
@@ -61,7 +61,7 @@
     "typescript": "^5.6.2",
     "vite": "^6.0.2", // TODO for frontend projects
     "vitest": "^3.0.2",
-    "wrangler": "^3.78.2"
+    "wrangler": "^3.78.2" // TODO for Cloudflare-based projects
   },
   "engines": {
     // TODO Choose one or another
