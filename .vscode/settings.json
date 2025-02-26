@@ -33,5 +33,7 @@
     "@stylistic/space-before-blocks",
     "@stylistic/space-before-function-paren",
     "@stylistic/space-in-parens"
-  ]
+  ],
+
+  "prettier.enable": false
 }
