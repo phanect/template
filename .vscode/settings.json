@@ -3,6 +3,7 @@
   "javascript.preferences.quoteStyle": "double",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
 
+  "eslint.useFlatConfig": true,
   "eslint.validate": [
     "javascript",
     "typescript",
@@ -14,6 +15,5 @@
     "json",
     "jsonc",
     "json5",
-  ],
-  "eslint.useFlatConfig": true,
+  ]
 }
