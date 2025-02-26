@@ -23,7 +23,6 @@ jobs:
           - 22
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
       - name: Use Node.js v${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -31,6 +30,7 @@ jobs:
           check-latest: true
           # cache: pnpm # TODO Add this line if the projects has lock files (e.g. web apps)
 
+      - run: corepack enable pnpm
       # TODO Choose one of these
       # - run: pnpm install --frozen-lockfile # If the project DOES have lock files (e.g. web apps)
       # - run: pnpm install # If the project does NOT have lock files (e.g. npm packages)
@@ -41,7 +41,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
       - name: Use Node.js v22
         uses: actions/setup-node@v4
         with:
@@ -49,6 +48,7 @@ jobs:
           check-latest: true
           # cache: pnpm # TODO Add this line if the projects has lock files (e.g. web apps)
 
+      - run: corepack enable pnpm
       # TODO Choose one of these
       # - run: pnpm install --frozen-lockfile # If the project DOES have lock files (e.g. web apps)
       # - run: pnpm install # If the project does NOT have lock files (e.g. npm packages)
@@ -63,12 +63,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           check-latest: true
 
+      - run: corepack enable pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build
       - run: pnpm run deploy
@@ -83,12 +83,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           check-latest: true
 
+      - run: corepack enable pnpm
       - run: pnpm install
       - run: pnpm run build
 
