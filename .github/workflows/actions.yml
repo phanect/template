@@ -11,6 +11,8 @@ on:
     types:
       - published
 
+permissions: {}
+
 jobs:
   test:
     name: test on Node.js v${{ matrix.node-version }}
