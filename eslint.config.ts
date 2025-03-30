@@ -3,9 +3,9 @@ import { core, nodejs, unbundled } from "@phanect/lint";
 import { vue, nuxt } from "@phanect/lint-vue";
 import { svelte } from "@phanect/lint-svelte";
 import { astro } from "@phanect/lint-astro";
+import type { Linter } from "eslint";
 
-/** @type { import("eslint").Linter.Config[] } */
-export default [
+const configs: Linter.Config[] = [
   {
     ignores: [
       "path/to/ignore/**",
@@ -34,3 +34,5 @@ export default [
     },
   },
 ];
+
+export default configs;
