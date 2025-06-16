@@ -54,7 +54,7 @@
     "@phanect/lint-vue": "latest",
     "@phanect/lint-svelte": "latest",
     "@phanect/lint-astro": "latest",
-    "@types/node": "^22.5.5",
+    "@types/node": "^24.0.3",
     "eslint": "^9.11.0",
     "jiti": "latest",
     "tsup": "^8.3.0", // TODO for Node.js projects which requires bundling
