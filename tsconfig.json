@@ -20,7 +20,7 @@
     ],
     // add for Hono projects
     "jsxImportSource": "hono/jsx"
-  }
+  },
   "include": [
     "**/*.ts",
     "**/*.tsx",
