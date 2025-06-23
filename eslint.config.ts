@@ -8,7 +8,7 @@ import type { Linter } from "eslint";
 const configs: Linter.Config[] = [
   {
     ignores: [
-      "path/to/ignore/**",
+      "./**/dist/**",
     ],
   },
 
