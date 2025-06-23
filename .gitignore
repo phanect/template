@@ -99,9 +99,5 @@ worker-configuration.d.ts
 .vercel/
 .netlify/
 
-# Prisma
-/prisma/*.db
-/prisma/*.db-journal
-
 # ESLint
 .eslintcache
