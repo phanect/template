@@ -5,7 +5,7 @@
 # TODO
 
 #
-# System
+# Generic
 #
 
 # PIDs
@@ -18,10 +18,6 @@ pids
 .directory
 Thumbs.db
 .DS_Store
-
-#
-# Generic
-#
 
 # Build directory
 dist/
