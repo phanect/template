@@ -22,14 +22,14 @@
       "vars": {
         "NODE_ENV": "production",
         "SERVER_ENV": "production",
-        "NODE_VERSION": 22,
+        "NODE_VERSION": 24,
         "NPM_VERSION": 10
       },
     },
     "staging": {
       "vars": {
         "SERVER_ENV": "staging",
-        "NODE_VERSION": 22,
+        "NODE_VERSION": 24,
         "NPM_VERSION": 10
       }
     }
