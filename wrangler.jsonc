@@ -13,7 +13,9 @@
     "mode": "smart"
   },
 
-  "pages_build_output_dir": "./dist",
+  "assets": {
+    "directory": "./dist"
+  },
 
   "env": {
     "production": {
@@ -24,9 +26,9 @@
         "NPM_VERSION": 10
       },
     },
-    "preview": {
+    "staging": {
       "vars": {
-        "SERVER_ENV": "preview",
+        "SERVER_ENV": "staging",
         "NODE_VERSION": 22,
         "NPM_VERSION": 10
       }
