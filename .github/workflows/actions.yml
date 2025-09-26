@@ -50,7 +50,7 @@ jobs:
       - name: Use Node.js v22
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: 22
+          node-version: 24
           check-latest: true
           # cache: pnpm # TODO Add this line if the projects has lock files (e.g. web apps)
 
@@ -72,7 +72,7 @@ jobs:
       - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: 22
+          node-version: 24
           check-latest: true
 
       - run: pnpm install --frozen-lockfile
@@ -93,7 +93,7 @@ jobs:
       - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: 22
+          node-version: 24
           check-latest: true
 
       - run: pnpm install
