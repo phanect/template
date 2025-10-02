@@ -1,7 +1,8 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "EditorConfig.EditorConfig"
+    "EditorConfig.EditorConfig",
+    "hverlin.mise-vscode"
 
     // ▼▼ TODO Add required extensions ▼▼
 

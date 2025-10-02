@@ -28,23 +28,6 @@
     }
   },
   // ▲▲ TODO Add this section if the project is an npm package ▲▲
-
-  "scripts": {
-    // TODO Choose one or another
-    "dev": "vite",
-    "dev": "jiti main.ts",
-
-    "build": "vite build",
-    "lint": "tsc --noEmit && eslint",
-    "fix": "eslint --fix",
-
-    // TODO Add this if the project is an npm package
-    "release": "npm publish --access public --non-interactive",
-
-    "test": "vitest run",
-    "clean": "git clean -dX --exclude=\"!.env\" --force",
-    "refresh": "pnpm run clean && rm --force ./pnpm-lock.yaml && corepack up && pnpm install"
-  },
   "dependencies": {},
   // TODO The package version is probably outdated, so check with `npm outdated` and update them.
   "devDependencies": {

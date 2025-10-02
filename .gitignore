@@ -47,6 +47,9 @@ logs/
 *.db
 *.db-journal
 
+# mise
+mise.local.toml
+
 #
 # JavaScript
 #
