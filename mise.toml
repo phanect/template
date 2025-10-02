@@ -1,0 +1,56 @@
+[tools]
+node = { version = "24" }
+
+[tasks]
+  [tasks.dev]
+  # TODO Choose one of these
+  run = "vite"
+  run = "jiti main.ts"
+
+  [tasks.build]
+  run = "vite build"
+  env = { NODE_ENV = "production" }
+
+  [tasks.lint]
+  run = [
+    "tsc --noEmit",
+    "eslint"
+  ]
+
+  [tasks.fix]
+  run = "eslint --fix"
+
+  [tasks.test]
+  run = "vitest run"
+
+  [tasks.clean]
+  run = "git clean -dX --exclude=\"!mise.local.toml\" --force"
+
+  [tasks.refresh]
+  depends = [ "clean" ]
+  run = [
+    "rm --force ./pnpm-lock.yaml",
+    "corepack enable",
+    "corepack up",
+    "mise install"
+  ]
+
+  # TODO Add this task if the project is an npm package
+  [tasks.release]
+  run = "npm publish --access public --non-interactive"
+
+[hooks]
+postinstall = [
+  "corepack enable",
+  "pnpm install --frozen-lockfile", # TODO remove --frozen-lockfile if pnpm-lock.yaml is not included in this repo
+]
+
+[env]
+_.path = "./node_modules/.bin"
+
+[settings]
+jobs = 8
+
+# Required for hooks as of 2025.10
+# https://mise.jdx.dev/hooks.html
+experimental = true

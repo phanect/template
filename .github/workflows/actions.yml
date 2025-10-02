@@ -15,6 +15,27 @@ permissions:
   contents: read
 
 jobs:
+  build-lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: jdx/mise-action@c37c93293d6b742fc901e1406b8f764f6fb19dac # v2.4.4
+        with:
+          install: true
+          cache: true
+
+      - run: mise lint
+      - run: mise build
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: dist
+          path: dist # TODO Change build directory
+          if-no-files-found: error
+          retention-days: 1
+          include-hidden-files: true
+
   test:
     name: test on Node.js v${{ matrix.node-version }}
     runs-on: ubuntu-latest
@@ -25,81 +46,65 @@ jobs:
           - 20
           - 22
           - 24
+    env:
+      # Override Node.js version over mise.toml
+      MISE_NODE_VERSION: ${{ matrix.node-version }}
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-      - name: Use Node.js v${{ matrix.node-version }}
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+      - uses: jdx/mise-action@c37c93293d6b742fc901e1406b8f764f6fb19dac # v2.4.4
         with:
-          node-version: ${{ matrix.node-version }}
-          check-latest: true
-          # cache: pnpm # TODO Add this line if the projects has lock files (e.g. web apps)
+          install: true
+          cache: true
 
-      # TODO Choose one of these
-      # - run: pnpm install --frozen-lockfile # If the project DOES have lock files (e.g. web apps)
-      # - run: pnpm install # If the project does NOT have lock files (e.g. npm packages)
-      - run: pnpm run build
-      - run: pnpm run test
+      - run: mise test
 
-  lint:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-      - name: Use Node.js v22
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
-        with:
-          node-version: 24
-          check-latest: true
-          # cache: pnpm # TODO Add this line if the projects has lock files (e.g. web apps)
-
-      # TODO Choose one of these
-      # - run: pnpm install --frozen-lockfile # If the project DOES have lock files (e.g. web apps)
-      # - run: pnpm install # If the project does NOT have lock files (e.g. npm packages)
-      - run: pnpm run lint
-
-  # ▼▼ TODO Add this section if the project is a web app ▼▼
-  deploy:
+  release:
     needs:
+      - build-lint
       - test
-      - lint
+    # TODO Only required for Cloudflare Workers
     if: github.event_name == 'release'
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    # ▼▼ TODO Only required for Cloudflare Workers ▼▼
+    permissions:
+      contents: read
+      pull-requests: write
+    # ▲▲ TODO Only required for Cloudflare Workers ▲▲
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+      - uses: jdx/mise-action@c37c93293d6b742fc901e1406b8f764f6fb19dac # v2.4.4
         with:
-          node-version: 24
-          check-latest: true
+          install: true
+          cache: true
 
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run build
-      - run: pnpm run deploy
-  # ▲▲ TODO Add this section if the project is a web app ▲▲
-
-  # ▼▼ TODO Add this section if the project is an npm package ▼▼
-  publish:
-    needs:
-      - test
-      - lint
-    if: github.event_name == 'release'
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
         with:
-          node-version: 24
-          check-latest: true
+          name: dist
+          path: dist # TODO Change build directory
 
-      - run: pnpm install
-      - run: pnpm run build
+      # ▼▼ TODO Add this section if the project is deployed to Cloudflare Workers ▼▼
+      - name: deploy Worker
+        id: deployment
+        uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
+        with:
+          environment: ${{ github.event_name == 'release' && 'production' || 'staging'  }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Add comment for deployment URL
+        run: "gh pr comment ${{ github.event.number }} --edit-last --create-if-none --body 'Deployed to staging:\n${{ steps.deployment.outputs.pages-deployment-alias-url && steps.deployment.outputs.pages-deployment-alias-url || steps.deployment.outputs.deployment-url }}'"
+      # ▲▲ TODO Add this section if the project is deployed to Cloudflare Workers ▲▲
+
+      # ▼▼ TODO Add this section if the deploy command can be executed with `mise deploy` ▼▼
+      - run: mise build
+      - run: mise deploy
+      # ▲▲ TODO Add this section if the deploy command can be executed with `mise deploy` ▲▲
+
+      # ▼▼ TODO Add this section if the project is an npm package ▼▼
+      - run: mise build
 
       - name: Set npm auth token
         run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > ~/.npmrc
-      - run: pnpm run release
-  # ▲▲ TODO Add this section if the project is an npm package ▲▲
+      - run: mise publish
+      # ▲▲ TODO Add this section if the project is an npm package ▲▲
