@@ -12,4 +12,8 @@ if not ("SERVER_ENV" in $env) {
   exit 1
 }
 
+if ($env.SERVER_ENV == "development") {
+  container compose up -d --wait
+}
+
 # TODO add prepare process
