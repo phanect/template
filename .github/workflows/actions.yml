@@ -106,13 +106,10 @@ jobs:
       # ▲▲ TODO Add this section if the project is deployed to Cloudflare Workers ▲▲
 
       # ▼▼ TODO Add this section if the deploy command can be executed with `mise deploy` ▼▼
-      - run: mise build
       - run: mise deploy
       # ▲▲ TODO Add this section if the deploy command can be executed with `mise deploy` ▲▲
 
       # ▼▼ TODO Add this section if the project is an npm package ▼▼
-      - run: mise build
-
       - name: Set npm auth token
         run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > ~/.npmrc
       - run: mise publish
