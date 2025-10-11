@@ -4,12 +4,12 @@ export default defineConfig({
   entry: {
     main: "src/main.ts",
   },
-  format: "esm",
+  format: [ "esm", "cjs" ],
 
   dts: true,
-  sourcemap: false,
+  sourcemap: true,
 
-  treeshake: true,
+  treeshake: false,
   minify: false,
   clean: true,
 });
