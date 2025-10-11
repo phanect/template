@@ -40,7 +40,7 @@ node = { version = "24" }
   ]
 
   # TODO Add this task if the project is an npm package
-  [tasks.release]
+  [tasks.publish]
   run = "npm publish --access public --non-interactive"
 
 [hooks]
