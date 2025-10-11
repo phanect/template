@@ -4,21 +4,26 @@ node = { version = "24" }
 
 [tasks]
   [tasks.dev]
+  depends = [ "prepare" ]
+
   # TODO Choose one of these
   run = "vite"
   run = "jiti main.ts"
 
   [tasks.build]
+  depends = [ "prepare" ]
   run = "vite build"
   env = { NODE_ENV = "production" }
 
   [tasks.lint]
+  depends = [ "prepare" ]
   run = [
     "tsc --noEmit",
     "eslint"
   ]
 
   [tasks.fix]
+  depends = [ "prepare" ]
   run = "eslint --fix"
 
   [tasks.test]
@@ -44,6 +49,7 @@ node = { version = "24" }
 postinstall = [
   "corepack enable",
   "pnpm install --frozen-lockfile", # TODO remove --frozen-lockfile if pnpm-lock.yaml is not included in this repo
+  "mise prepare",
 ]
 
 [env]
