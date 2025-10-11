@@ -73,7 +73,7 @@ pnpm-lock.yaml
 
 # ▼▼ TODO Add this section if the project DOES require the lock files e.g. web apps ▼▼
 
-# npm is the package manager for this project.
+# pnpm is the package manager for this project.
 
 # ▲▲ TODO Add this section if the project DOES require the lock files e.g. web apps ▲▲
 
