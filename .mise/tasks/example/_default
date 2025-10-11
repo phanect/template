@@ -1,6 +1,6 @@
 #!/usr/bin/env nu
 
-#MISE description="Prepare after `mise install`. Build intermediate files and initialize local DBs."
+#MISE description="Example shell script in Nushell"
 
 use ../_libs *
 
@@ -16,4 +16,4 @@ if ($env.SERVER_ENV == "development") {
   container compose up -d --wait
 }
 
-# TODO add prepare process
+# TODO add script
