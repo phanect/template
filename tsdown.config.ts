@@ -1,10 +1,9 @@
-import { defineConfig } from "tsup";
+import { defineConfig } from "tsdown";
 
 export default defineConfig({
   entry: {
     main: "src/main.ts",
   },
-  target: "node18",
   format: "esm",
 
   dts: true,
@@ -12,6 +11,5 @@ export default defineConfig({
 
   treeshake: true,
   minify: false,
-  splitting: false,
   clean: true,
 });
