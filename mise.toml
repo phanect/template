@@ -30,8 +30,6 @@ node = { version = "24" }
   run = "vitest run"
 
   [tasks.clean]
-  run = "git clean -dX --exclude=\"!mise.local.toml\" --force"
-
   run = [
     "git clean -dX --exclude=\"!mise.local.toml\" --force",
     { task = "clean:containers" }
