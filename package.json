@@ -43,7 +43,7 @@
     "tsdown": "0.15.10", // TODO for npm packages which requires bundling
     "typescript": "^5.6.2",
     "vite": "^7.0.0", // TODO for frontend projects
-    "vitest": "^3.0.2",
+    "vitest": "^4.0.4",
     "wrangler": "^4.0.0" // TODO for Cloudflare-based projects
   },
   "engines": {
