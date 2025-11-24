@@ -40,7 +40,7 @@
     "@types/node": "^24.0.3",
     "eslint": "^9.11.0",
     "jiti": "latest",
-    "tsdown": "0.16.5", // TODO for npm packages which requires bundling
+    "tsdown": "0.16.6", // TODO for npm packages which requires bundling
     "typescript": "^5.6.2",
     "vite": "^7.0.0", // TODO for frontend projects
     "vitest": "^4.0.4",
