@@ -28,7 +28,9 @@
     }
   },
   // ▲▲ TODO Add this section if the project is an npm package ▲▲
-  "dependencies": {},
+  "dependencies": {
+    "drizzle-orm": "0.44.7" // TODO for Drizzle
+  },
   // TODO The package version is probably outdated, so check with `npm outdated` and update them.
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240909.0", // TODO for Cloudflare-based projects
@@ -38,6 +40,7 @@
     "@phanect/lint-svelte": "latest",
     "@phanect/lint-astro": "latest",
     "@types/node": "^24.0.3",
+    "drizzle-kit": "0.31.6", // TODO for Drizzle
     "eslint": "^9.11.0",
     "jiti": "latest",
     "tsdown": "0.16.6", // TODO for npm packages which requires bundling
