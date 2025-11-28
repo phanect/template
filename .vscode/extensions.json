@@ -2,21 +2,19 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "EditorConfig.EditorConfig",
-    "hverlin.mise-vscode"
+    "hverlin.mise-vscode",
+    "tamasfe.even-better-toml"
 
     // ▼▼ TODO Add required extensions ▼▼
 
-    // "astro-build.astro-vscode", // Astro
-    // "svelte.svelte-vscode", // Svelte
-    // "Vue.volar", // Vue
+    // "mrmlnc.vscode-json5",
+    // "TheNuProjectContributors.vscode-nushell-lang",
+    // "astro-build.astro-vscode",
+    // "svelte.svelte-vscode",
+    // "Vue.volar",
     //
-    // "Prisma.prisma", // Prisma ORM
-    // "TheNuProjectContributors.vscode-nushell-lang", // NuShell
-    //
-    // "csstools.postcss", // PostCSS
-    // "bradlc.vscode-tailwindcss", // Tailwind CSS
-    //
-    // "mrmlnc.vscode-json5", // JSON5
-    // "tamasfe.even-better-toml", // Toml
+    // "Prisma.prisma",
+    // "csstools.postcss",
+    // "bradlc.vscode-tailwindcss"
   ]
 }
