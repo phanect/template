@@ -19,7 +19,7 @@ Then run the following commands:
 
 ```sh
 cd /path/to/%projectname%
-cp ./mise.local.example.toml ./mise.local.toml
+cp ./.env.example ./.env
 mise install
 mise dev
 ```
