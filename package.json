@@ -29,6 +29,7 @@
   },
   // ▲▲ TODO Add this section if the project is an npm package ▲▲
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.940.0", // TODO Required if you use src/storage.ts
     "drizzle-orm": "0.44.7" // TODO for Drizzle
   },
   // TODO The package version is probably outdated, so check with `npm outdated` and update them.
