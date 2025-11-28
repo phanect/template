@@ -29,8 +29,8 @@ services:
       MINIO_ROOT_USER: %productname%
       MINIO_ROOT_PASSWORD: %productname%
     ports:
-      - "9000:9000" # API
-      - "9001:9001" # Admin console
+      - 9000:9000 # API
+      - 9001:9001 # Admin console
     command: [ "server", "/data", "--console-address", ":9001" ]
     volumes:
       - %productname%-storage:/data
