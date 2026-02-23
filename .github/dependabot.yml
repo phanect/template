@@ -12,6 +12,13 @@ updates:
         update-types:
           - "minor"
           - "patch"
+      # Better Auth frequently makes breaking changes in minor versions,
+      # so make different PRs from other version updates.
+      better-auth:
+        applies-to: "version-updates"
+        patterns:
+          - "@better-auth/cli"
+          - "better-auth"
 
   - package-ecosystem: "github-actions"
     directory: "/"
