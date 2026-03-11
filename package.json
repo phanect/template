@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [], // TODO Add this if the project is an npm package
-  "author": "Jumpei Ogawa (https://phanective.org)", // TODO Update here if necessary
+  // TODO Update author if necessary
+  "author": {
+    "name": "Jumpei Ogawa",
+    "url": "https://phanective.org"
+  },
   // TODO Choose one or another
   "license": "Apache-2.0",
   "license": "MIT",
