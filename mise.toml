@@ -15,7 +15,7 @@ node = { version = "24" }
   [tasks.lint]
   run = [
     "tsc --noEmit",
-    "eslint"
+    "eslint",
   ]
 
   [tasks.fix]
