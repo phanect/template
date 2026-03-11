@@ -44,7 +44,7 @@ updates:
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     assignees:
       - "phanect"
   # ▲▲ TODO Remove if not required ▲▲
