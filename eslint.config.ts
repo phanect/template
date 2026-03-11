@@ -1,5 +1,6 @@
 // TODO Remove imports you don't use
 import { core, nodejs, unbundled } from "@phanect/lint";
+import { react, nextjs } from "@phanect/lint-react";
 import { vue, nuxt } from "@phanect/lint-vue";
 import { svelte } from "@phanect/lint-svelte";
 import { astro } from "@phanect/lint-astro";
@@ -16,6 +17,8 @@ const configs: Linter.Config[] = [
   // TODO Add if you need
   // ...nodejs,
   // ...unbundled,
+  // ...react,
+  // ...nextjs,
   // ...vue,
   // ...nuxt,
   // ...svelte,
