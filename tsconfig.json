@@ -33,9 +33,9 @@
     "**/dist/**",
     // TODO add the following directories if you use any framework(s)
     // "**/.next/**",
+    // "**/out/**",
     // "**/.nuxt/**",
     // "**/.svelte-kit/**",
-    // "**/.astro/**",
-    // "**/out/**",
+    // "**/.astro/**"
   ]
 }
