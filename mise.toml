@@ -1,18 +1,24 @@
+experimental_monorepo_root = true
+
+[monorepo]
+config_roots = [ "projects/*" ]
+
 [tools]
 node = "24"
 "npm:nushell" = "latest"
 
 [tasks]
   [tasks.dev]
-  # TODO Choose one of these
-  run = "vite"
-  run = "jiti main.ts"
+  run =[{ task = "//projects/...:dev" }]
 
   [tasks.build]
-  run = "vite build"
-  env = { NODE_ENV = "production" }
+  run =[{ task = "//projects/...:build" }]
+
+  [tasks.test]
+  run =[{ task = "//projects/...:test" }]
 
   [tasks.lint]
+  depends = [ "//projects/...:lint" ]
   run = [
     "tsc --noEmit",
     "eslint",
@@ -20,9 +26,6 @@ node = "24"
 
   [tasks.fix]
   run = "eslint --fix"
-
-  [tasks.test]
-  run = "vitest run"
 
   [tasks.clean]
   run = [
@@ -39,9 +42,9 @@ node = "24"
     "pnpm install"
   ]
 
-  # TODO Add this task if the project is an npm package
+  # TODO Add this task if the project includes npm package(s)
   [tasks.publish]
-  run = "npm publish --access public --non-interactive"
+  run =[{ task = "//projects/...:publish" }]
 
 [hooks]
 postinstall = [

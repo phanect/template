@@ -1,0 +1,19 @@
+[tasks]
+  [tasks.dev]
+  run = "jiti main.ts"
+
+  [tasks.build]
+  run = "vite build"
+  env = { NODE_ENV = "production" }
+
+  [tasks.test]
+  run = "vitest run"
+
+  [tasks.lint]
+  run = "tsc --noEmit"
+
+  [tasks.publish]
+  run = "npm publish --access public --non-interactive"
+
+[env]
+_.path = "./node_modules/.bin"
