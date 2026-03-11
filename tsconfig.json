@@ -29,13 +29,13 @@
     "**/*.jsx"
   ],
   "exclude": [
-    "node_modules"
+    "**/node_modules/**"
     // TODO add the following directories if you use any framework(s)
-    // ".next",
-    // ".nuxt",
-    // .svelte-kit/
-    // .astro/
-    // "out",
-    // "dist",
+    // "**/.next/**",
+    // "**/.nuxt/**",
+    // "**/.svelte-kit/**",
+    // "**/.astro/**",
+    // "**/out/**",
+    // "**/dist/**",
   ]
 }
