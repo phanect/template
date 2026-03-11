@@ -36,7 +36,7 @@ node = "24"
     "rm --force ./pnpm-lock.yaml",
     "corepack enable",
     "corepack up",
-    "mise install"
+    "pnpm install"
   ]
 
   # TODO Add this task if the project is an npm package
