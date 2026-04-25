@@ -1,6 +1,10 @@
 ---
 name: playwright
 description: Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.
+license: MIT
+metadata:
+  author: GitHub, Inc.
+  source: https://github.com/github/awesome-copilot/tree/main/skills/webapp-testing
 ---
 
 # Web Application Testing

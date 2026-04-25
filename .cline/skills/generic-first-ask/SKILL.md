@@ -1,6 +1,10 @@
 ---
 name: generic-first-ask
 description: 'Interactive, input-tool powered, task refinement workflow: interrogates scope, deliverables, constraints before carrying out the task; Requires the Joyride extension.'
+license: MIT
+metadata:
+  author: GitHub, Inc.
+  source: https://github.com/github/awesome-copilot/tree/main/skills/first-ask
 ---
 
 # Act Informed: First understand together with the human, then do
