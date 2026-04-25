@@ -4,6 +4,7 @@ description: Prisma CLI commands reference covering all available commands, opti
 license: MIT
 metadata:
   author: prisma
+  source: https://github.com/prisma/skills/tree/main/prisma-cli
   version: "7.6.0"
 ---
 

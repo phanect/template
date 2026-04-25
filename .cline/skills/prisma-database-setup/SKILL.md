@@ -4,6 +4,7 @@ description: Guides for configuring Prisma with different database providers (Po
 license: MIT
 metadata:
   author: prisma
+  source: https://github.com/prisma/skills/tree/main/prisma-database-setup
   version: "7.6.0"
 ---
 
