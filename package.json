@@ -19,7 +19,6 @@
     "@phanect/configs": "latest",
     "@phanect/lint": "latest",
     "@phanect/lint-react": "latest",
-    "@phanect/lint-vue": "latest",
     "@phanect/lint-svelte": "latest",
     "@phanect/lint-astro": "latest",
     "@types/node": "^24.0.3",
