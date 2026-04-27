@@ -22,20 +22,23 @@ services:
       interval: 1s
       timeout: 1m
 
-  localstack:
-    image: localstack/localstack:s3-latest
+  storage:
+    image: rustfs/rustfs:latest
     restart: always
     environment:
-      SERVICES: s3
+      RUSTFS_ACCESS_KEY: %productname%
+      RUSTFS_SECRET_KEY: %productname%
+      RUSTFS_CONSOLE_ENABLE: true
     ports:
-      - 4566:4566
+      - "9000:9000" # API
+      - "9001:9001" # Admin console
     volumes:
-      - %productname%-localstack:/var/lib/localstack
+      - %productname%-storage:/data
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:4566/_localstack/health" ]
-      interval: 1s
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/health" ]
+      interval: 2s
       timeout: 1m
 
 volumes:
   %productname%-db: {}
-  %productname%-localstack: {}
+  %productname%-storage: {}
