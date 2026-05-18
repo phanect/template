@@ -18,7 +18,6 @@ const configs: Linter.Config[] = [
   // ...unbundled,
   // ...react,
   // ...nextjs,
-  // ...nuxt,
   // ...svelte,
   // ...astro,
 
