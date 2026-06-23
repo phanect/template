@@ -25,6 +25,9 @@
     "eslint": "^10.2.1",
     "jiti": "latest",
     "oxfmt": "latest",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-tailwindcss": "^1.0.0",
     "typescript": "^6.0.3"
   },
   "engines": {
