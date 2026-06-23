@@ -25,6 +25,7 @@ node = "24"
   run = [
     "tsc --noEmit",
     "eslint",
+    "stylelint \"**/*.{css,scss}\"",
   ]
 
   [tasks.fix]
