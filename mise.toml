@@ -9,7 +9,10 @@ node = "24"
 
 [tasks]
   [tasks.dev]
-  run =[{ task = "//projects/...:dev" }]
+  run = [
+    "podman compose ls > /dev/null",
+    "//projects/...:dev",
+  ]
 
   [tasks.build]
   run =[{ task = "//projects/...:build" }]
