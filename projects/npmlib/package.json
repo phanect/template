@@ -27,7 +27,7 @@
     "dev": "tsdown --watch --no-clean",
     "build": "tsdown",
     "test": "vitest run",
-    "lint": "tsc --noEmit",
+    "lint": "tsc --noEmit", // TODO if this is a root project, use "tsc --noEmit && eslint"
     "publish": "npm publish --access public --non-interactive"
   },
   "dependencies": {},
