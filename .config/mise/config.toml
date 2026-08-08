@@ -1,5 +1,5 @@
 [tools]
-node = "24"
+node = { version = "24", corepack = true }
 "npm:nushell" = "latest"
 
 [hooks]
