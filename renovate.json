@@ -3,5 +3,7 @@
 
   "extends": [
     "https://configs.phanective.org/renovate.json5"
-  ]
+  ],
+  "assignees": [ "phanect" ],
+  "reviewers": [ "phanect" ]
 }
