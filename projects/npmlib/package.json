@@ -34,7 +34,7 @@
   // TODO The package version is probably outdated, so check with `pnpm outdated --recursive` and update them.
   "devDependencies": {
     "@phanect/configs": "latest",
-    "@types/node": "^24.0.3",
+    "@types/node": "^26.0.0",
     "jiti": "latest",
     "tsdown": "0.16.6",
     "typescript": "^5.6.2",
