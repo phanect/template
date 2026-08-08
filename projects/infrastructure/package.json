@@ -1,0 +1,10 @@
+{
+  "name": "@%NAMESPACE%/infrastructure", // TODO rename
+  "version": "0.0.0",
+  "description": "Local infrastructure",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "podman compose ls > /dev/null && podman compose up --wait"
+  }
+}
