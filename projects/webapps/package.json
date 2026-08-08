@@ -7,7 +7,7 @@
     "name": "Jumpei Ogawa",
     "url": "https://phanective.org"
   },
-  "license": "Apache-2.0 | MIT | CC0-1.0 | AGPL-3.0 | UNLICENSED", // TODO Choose one
+  "license": "Apache-2.0 | MIT | CC0-1.0 | AGPL-3.0-or-later | UNLICENSED", // TODO Choose one
   "private": true,
   "type": "module",
   "dependencies": {
