@@ -1,8 +1,3 @@
-experimental_monorepo_root = true
-
-[monorepo]
-config_roots = [ "projects/*" ]
-
 [tools]
 node = "24"
 "npm:nushell" = "latest"
@@ -13,42 +8,6 @@ node = "24"
     "podman compose ls > /dev/null",
     "//projects/...:dev",
   ]
-
-  [tasks.build]
-  run =[{ task = "//projects/...:build" }]
-
-  [tasks.test]
-  run =[{ task = "//projects/...:test" }]
-
-  [tasks.lint]
-  depends = [ "//projects/...:lint" ]
-  run = [
-    "tsc --noEmit",
-    "eslint",
-    "stylelint \"**/*.{css,scss}\"",
-  ]
-
-  [tasks.fix]
-  run = "eslint --fix"
-
-  [tasks.clean]
-  run = [
-    "git clean -dX --exclude=\"!.env\" --exclude=\"!mise.local.toml\" --force",
-    { task = "clean:containers" }
-  ]
-
-  [tasks.refresh]
-  depends = [ "clean" ]
-  run = [
-    "rm --force ./pnpm-lock.yaml",
-    "corepack enable",
-    "corepack up",
-    "pnpm install"
-  ]
-
-  # TODO Add this task if the project includes npm package(s)
-  [tasks.publish]
-  run =[{ task = "//projects/...:publish" }]
 
 [hooks]
 postinstall = [
