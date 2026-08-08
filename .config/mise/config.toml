@@ -3,10 +3,7 @@ node = "24"
 "npm:nushell" = "latest"
 
 [hooks]
-postinstall = [
-  "corepack enable",
-  "pnpm install --frozen-lockfile", # TODO remove --frozen-lockfile if pnpm-lock.yaml is not included in this repo
-]
+postinstall = "corepack enable"
 
 [env]
 _.file = ".env"
