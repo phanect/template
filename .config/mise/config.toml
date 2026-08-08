@@ -10,7 +10,3 @@ _.file = ".env"
 
 [settings]
 jobs = 8
-
-# Required for hooks as of 2025.10
-# https://mise.jdx.dev/hooks.html
-experimental = true
