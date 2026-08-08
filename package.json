@@ -10,6 +10,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "pnpm -r --stream --if-present --parallel run dev",
     "build": "pnpm -r --stream run build",
     "test": "pnpm -r --stream --if-present --parallel run test",
     "lint": "pnpm -r --stream --if-present --parallel run lint && tsc --noEmit && eslint && stylelint \"**/*.{css,scss}\"",
