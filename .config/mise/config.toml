@@ -2,13 +2,6 @@
 node = "24"
 "npm:nushell" = "latest"
 
-[tasks]
-  [tasks.dev]
-  run = [
-    "podman compose ls > /dev/null",
-    "//projects/...:dev",
-  ]
-
 [hooks]
 postinstall = [
   "corepack enable",
@@ -17,7 +10,6 @@ postinstall = [
 
 [env]
 _.file = ".env"
-_.path = "./node_modules/.bin"
 
 [settings]
 jobs = 8

@@ -22,6 +22,7 @@
   },
   // TODO The package version is probably outdated, so check with `npm outdated` and update them.
   "devDependencies": {
+    "@%NAMESPACE%/infrastructure": "workspace:*",
     "@cloudflare/workers-types": "^4.20240909.0", // TODO for Cloudflare-based projects
     "@phanect/configs": "latest",
     "@types/node": "^24.0.3",
