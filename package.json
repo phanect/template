@@ -6,12 +6,7 @@
     "name": "Jumpei Ogawa",
     "url": "https://phanective.org"
   },
-  // TODO Choose one or another
-  "license": "Apache-2.0",
-  "license": "MIT",
-  "license": "CC0-1.0",
-  "license": "AGPL-3.0",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0 | MIT | CC0-1.0 | AGPL-3.0 | UNLICENSED", // TODO Choose one
   "private": true,
   "type": "module",
   // TODO The package version is probably outdated, so check with `npm outdated` and update them.
