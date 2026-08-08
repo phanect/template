@@ -9,6 +9,16 @@
   "license": "Apache-2.0 | MIT | CC0-1.0 | AGPL-3.0 | UNLICENSED", // TODO Choose one
   "private": true,
   "type": "module",
+  "scripts": {
+    "build": "pnpm -r --stream run build",
+    "test": "pnpm -r --stream --if-present --parallel run test",
+    "lint": "pnpm -r --stream --if-present --parallel run lint && tsc --noEmit && eslint && stylelint \"**/*.{css,scss}\"",
+    "fix": "eslint --fix && stylelint --fix && pnpm -r --stream --if-present --parallel run fix",
+    "clean": "git clean -dX --exclude=\"!.env\" --exclude=\"!mise.local.toml\" --force && mise run clean:containers",
+    "refresh": "pnpm run clean && rm --force ./pnpm-lock.yaml && corepack enable && corepack up && pnpm install",
+    // TODO Add this task if the project includes npm package(s)
+    "publish": "pnpm -r --stream --if-present --parallel run publish"
+  },
   // TODO The package version is probably outdated, so check with `npm outdated` and update them.
   "devDependencies": {
     "@phanect/configs": "latest",
