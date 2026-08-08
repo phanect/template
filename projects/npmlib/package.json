@@ -23,6 +23,13 @@
       "require": "./dist/main.cjs"
     }
   },
+  "scripts": {
+    "dev": "jiti main.ts",
+    "build": "vite build",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "publish": "npm publish --access public --non-interactive"
+  },
   "dependencies": {},
   // TODO The package version is probably outdated, so check with `pnpm outdated --recursive` and update them.
   "devDependencies": {
