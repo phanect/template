@@ -28,7 +28,7 @@
     "@types/node": "^26.0.0",
     "drizzle-kit": "0.31.6", // TODO for Drizzle
     "jiti": "latest",
-    "typescript": "^5.6.2",
+    "typescript": "^6.0.3",
     "vite": "^7.0.0", // TODO for frontend or BFF projects
     "vitest": "^4.0.4",
     "wrangler": "^4.0.0" // TODO for Cloudflare-based projects
