@@ -114,3 +114,6 @@ vite.config.ts.timestamp-*
 # AI
 #
 .claude/**/*.local.json
+.claude/skills/
+
+.agents/skills/prisma-*
