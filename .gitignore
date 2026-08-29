@@ -20,7 +20,6 @@ Thumbs.db
 .DS_Store
 
 # Build directory
-build/
 dist/
 
 # tmp files
