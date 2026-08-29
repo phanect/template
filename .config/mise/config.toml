@@ -8,7 +8,7 @@ node = { version = "26", corepack = true }
 postinstall = "corepack enable"
 
 [env]
-_.file = ".env"
+_.file = "{{config_root}}/.env"
 
 [settings]
 jobs = 8
