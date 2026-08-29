@@ -109,3 +109,8 @@ vite.config.ts.timestamp-*
 
 # ESLint
 .eslintcache
+
+#
+# AI
+#
+.claude/**/*.local.json
