@@ -3,14 +3,12 @@ import { core, nodejs, unbundled } from "@phanect/lint";
 import { react, nextjs } from "@phanect/lint-react";
 import { svelte } from "@phanect/lint-svelte";
 import { astro } from "@phanect/lint-astro";
-import type { Linter } from "eslint";
+import { defineConfig, globalIgnores } from "eslint/config";
 
-const configs: Linter.Config[] = [
-  {
-    ignores: [
-      "./**/dist/**",
-    ],
-  },
+const configs = defineConfig([
+  globalIgnores([
+    "./**/dist/**",
+  ]),
 
   ...core,
   // TODO Add if you need
@@ -33,6 +31,6 @@ const configs: Linter.Config[] = [
       },
     },
   },
-];
+]);
 
 export default configs;
