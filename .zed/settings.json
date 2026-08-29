@@ -23,6 +23,17 @@
         "source.fixAll.eslint": true
       }
     },
+    "Astro": {
+      "language_servers": [
+        "astro-language-server",
+        "eslint"
+      ],
+      "formatter": "none",
+      "format_on_save": "on",
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
     "JSON": {
       "language_servers": [
         "json-language-server",
@@ -65,6 +76,21 @@
     "eslint": {
       "settings": {
         "codeActionOnSave": true
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "astro": "html"
+        },
+        "experimental": {
+          "classRegex": [
+            "class=\"([^\"]*)\"",
+            "class='([^']*)'",
+            "class:list=\"{([^}]*)}\"",
+            "class:list='{([^}]*)}'"
+          ]
+        }
       }
     }
   },
