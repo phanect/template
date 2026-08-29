@@ -19,7 +19,7 @@
     "refresh": "pnpm run clean && rm --force ./pnpm-lock.yaml && corepack enable && corepack up && pnpm install && skills update --project",
     // TODO Add this task if the project includes npm package(s)
     "publish": "pnpm -r --stream --if-present --parallel run publish",
-    "prepare": "skills experimental_install"
+    "prepare": "skills experimental_install && playwright-cli install --skills"
   },
   // TODO The package version is probably outdated, so check with `npm outdated` and update them.
   "devDependencies": {
@@ -28,6 +28,7 @@
     "@phanect/lint-react": "latest",
     "@phanect/lint-svelte": "latest",
     "@phanect/lint-astro": "latest",
+    "@playwright/cli": "0.1.18",
     "@types/node": "^26.0.0",
     "eslint": "^10.2.1",
     "jiti": "latest",
