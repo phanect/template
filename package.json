@@ -16,9 +16,10 @@
     "lint": "pnpm -r --stream --if-present --parallel run lint && tsc --noEmit && eslint && stylelint \"**/*.{css,scss}\"",
     "fix": "eslint --fix && stylelint --fix && pnpm -r --stream --if-present --parallel run fix",
     "clean": "git clean -dX --exclude=\"!.env\" --exclude=\"!mise.local.toml\" --force && mise run clean:containers",
-    "refresh": "pnpm run clean && rm --force ./pnpm-lock.yaml && corepack enable && corepack up && pnpm install",
+    "refresh": "pnpm run clean && rm --force ./pnpm-lock.yaml && corepack enable && corepack up && pnpm install && skills update --project",
     // TODO Add this task if the project includes npm package(s)
-    "publish": "pnpm -r --stream --if-present --parallel run publish"
+    "publish": "pnpm -r --stream --if-present --parallel run publish",
+    "prepare": "skills experimental_install"
   },
   // TODO The package version is probably outdated, so check with `npm outdated` and update them.
   "devDependencies": {
@@ -31,6 +32,7 @@
     "eslint": "^10.2.1",
     "jiti": "latest",
     "oxfmt": "latest",
+    "skills": "latest",
     "stylelint": "^16.26.1",
     "stylelint-config-standard": "^39.0.1",
     "stylelint-config-tailwindcss": "^1.0.0",
