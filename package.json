@@ -16,7 +16,7 @@
     "lint": "pnpm -r --stream --if-present --parallel run lint && tsc --noEmit && eslint && stylelint \"**/*.{css,scss}\"",
     "fix": "eslint --fix && stylelint --fix && pnpm -r --stream --if-present --parallel run fix",
     "clean": "git clean -dX --exclude=\"!.env\" --exclude=\"!mise.local.toml\" --force && mise run clean:containers",
-    "refresh": "pnpm run clean && rm --force ./pnpm-lock.yaml && mise upgrade && pnpm install && skills update --project",
+    "refresh": "pnpm run clean && rm --force ./pnpm-lock.yaml && mise upgrade && pnpm install && rm --force ./actions.lock && gh actions-lock && skills update --project",
     // TODO Add this task if the project includes npm package(s)
     "publish": "pnpm -r --stream --if-present --parallel run publish",
     "prepare": "skills experimental_install && playwright-cli install --skills"
