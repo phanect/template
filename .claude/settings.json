@@ -1,0 +1,8 @@
+{
+  "enabledMcpjsonServers": [
+    "better-auth",
+    "prisma",
+    "eslint",
+    "mise"
+  ]
+}
