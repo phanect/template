@@ -8,6 +8,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": false
   },
+  "json.format.enable": false, // We use ESLint to format JSONs
   "prettier.enable": false,
   "eslint.useFlatConfig": true,
   "eslint.validate": [
