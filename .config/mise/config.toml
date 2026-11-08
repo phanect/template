@@ -2,7 +2,6 @@
 
 [tools]
 node = { version = "26", corepack = true }
-"npm:nushell" = "latest"
 
 [hooks]
 postinstall = "corepack enable"
