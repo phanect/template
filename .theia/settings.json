@@ -6,7 +6,7 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "never"
+    "source.fixAll": false
   },
   "prettier.enable": false,
   "eslint.useFlatConfig": true,
