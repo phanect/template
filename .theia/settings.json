@@ -3,6 +3,12 @@
   "javascript.preferences.quoteStyle": "double",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
 
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never"
+  },
+  "prettier.enable": false,
   "eslint.useFlatConfig": true,
   "eslint.validate": [
     "javascript",
@@ -15,15 +21,9 @@
     "html",
     "json",
     "jsonc",
-    "json5",
+    "json5"
   ],
-
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "never"
-  },
   "eslint.format.enable": true,
   "eslint.codeActionsOnSave.mode": "problems",
   "eslint.codeActionsOnSave.rules": [
@@ -34,6 +34,4 @@
     "@stylistic/space-before-function-paren",
     "@stylistic/space-in-parens"
   ],
-
-  "prettier.enable": false
 }
