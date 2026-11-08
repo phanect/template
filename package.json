@@ -32,6 +32,7 @@
     "@types/node": "^26.0.0",
     "eslint": "^10.2.1",
     "jiti": "latest",
+    "nushell": "latest",
     "oxfmt": "latest",
     "skills": "latest",
     "stylelint": "^16.26.1",
