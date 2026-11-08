@@ -1,5 +1,7 @@
 {
   "enabledMcpjsonServers": [
+    "mdn",
+    "astro",
     "better-auth",
     "prisma",
     "eslint",
