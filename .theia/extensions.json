@@ -1,14 +1,16 @@
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint",
+    // TODO Remove comment out from required extensions
+
     "EditorConfig.EditorConfig",
     "hverlin.mise-vscode",
-    "tamasfe.even-better-toml"
-
-    // ▼▼ TODO Add required extensions ▼▼
+    "tamasfe.even-better-toml",
 
     // "mrmlnc.vscode-json5",
     // "TheNuProjectContributors.vscode-nushell-lang",
+
+    "dbaeumer.vscode-eslint"
+
     // "astro-build.astro-vscode",
     // "svelte.svelte-vscode",
     // "Vue.volar",
