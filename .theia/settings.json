@@ -27,12 +27,4 @@
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "eslint.format.enable": true,
   "eslint.codeActionsOnSave.mode": "problems",
-  "eslint.codeActionsOnSave.rules": [
-    "@stylistic/arrow-parens",
-    "@stylistic/quotes",
-    "@stylistic/semi",
-    "@stylistic/space-before-blocks",
-    "@stylistic/space-before-function-paren",
-    "@stylistic/space-in-parens"
-  ],
 }
