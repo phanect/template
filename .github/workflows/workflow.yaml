@@ -23,7 +23,7 @@ jobs:
         run: sudo apt remove -y podman
 
       - uses: actions/checkout@v7.0.1
-      - uses: jdx/mise-action@v5.2.7
+      - uses: jdx/mise-action@v5.3.0
         with:
           install: true
           cache: true
@@ -57,7 +57,7 @@ jobs:
         run: sudo apt remove -y podman
 
       - uses: actions/checkout@v7.0.1
-      - uses: jdx/mise-action@v5.2.7
+      - uses: jdx/mise-action@v5.3.0
         with:
           install: true
           cache: true
@@ -81,7 +81,7 @@ jobs:
         run: sudo apt remove -y podman
 
       - uses: actions/checkout@v7.0.1
-      - uses: jdx/mise-action@v5.2.7
+      - uses: jdx/mise-action@v5.3.0
         with:
           install: true
           cache: true
