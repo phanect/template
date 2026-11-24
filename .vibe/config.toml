@@ -1,0 +1,34 @@
+[mcp]
+[[mcp.servers]]
+name = "mdn"
+type = "http"
+url = "https://mcp.mdn.mozilla.net/"
+
+[[mcp.servers]]
+name = "astro"
+type = "http"
+url = "https://mcp.docs.astro.build/mcp"
+
+[[mcp.servers]]
+name = "better-auth"
+type = "http"
+url = "https://mcp.better-auth.com/mcp"
+
+[[mcp.servers]]
+name = "prisma"
+type = "command"
+command = "pnpm"
+args = [ "exec", "prisma", "mcp" ]
+
+[[mcp.servers]]
+name = "eslint"
+type = "command"
+command = "pnpm"
+args = [ "exec", "eslint", "--mcp" ]
+
+[[mcp.servers]]
+name = "mise"
+type = "command"
+command = "mise"
+args = [ "mcp" ]
+env = { MISE_EXPERIMENTAL = "1" }
