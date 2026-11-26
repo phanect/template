@@ -8,8 +8,13 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": false
   },
-  "json.format.enable": false, // We use ESLint to format JSONs
+
+  // Disable default editor formatters
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
+  "json.format.enable": false,
   "prettier.enable": false,
+
   "eslint.useFlatConfig": true,
   "eslint.validate": [
     "javascript",
