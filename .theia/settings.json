@@ -13,6 +13,7 @@
   "typescript.format.enable": false,
   "javascript.format.enable": false,
   "json.format.enable": false,
+  "json5.format.enable": false,
   "prettier.enable": false,
 
   "eslint.useFlatConfig": true,
